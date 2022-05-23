@@ -1,5 +1,3 @@
-import { hoge } from "./hoge.ts";
-
 function parseArgs() {
   const args = Deno.args;
   if (args.length < 1) {
@@ -13,7 +11,6 @@ try {
   const filename = parseArgs();
   const content = Deno.readTextFileSync(filename);
   console.log(content);
-  hoge();
   Deno.exit(0);
 } catch (e) {
   console.error(e.message);
