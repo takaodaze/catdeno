@@ -1,18 +1,9 @@
-import { helloWorld } from "./util.ts";
-function parseArgs() {
-  const args = Deno.args;
-  if (args.length < 1) {
-    throw new Error("please a file name");
-  }
-  const filename = args[0];
-  return filename;
-}
+import { parseArgs } from "./util.ts";
 
 try {
   const filename = parseArgs();
   const content = Deno.readTextFileSync(filename);
   console.log(content);
-  helloWorld();
   Deno.exit(0);
 } catch (e) {
   console.error(e.message);
